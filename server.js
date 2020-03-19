@@ -1,4 +1,5 @@
 const express = require("express");
+const chalk = require('chalk');
 const fs = require('fs');
 const PORT = 5000;
 const app = express();
@@ -29,7 +30,7 @@ let demoLogger = (req, res, next) => {
     let status = res.statusCode;
     const start = process.hrtime();
     const durationInMilliseconds = getActualRequestDurationInMilliseconds(start);
-    let log = `[${formatted_date}] ${method}:${url} ${status} ${durationInMilliseconds.toLocaleString()} ms`;
+    let log = `[${chalk.blue(formatted_date)}] ${method}:${url} ${status} ${durationInMilliseconds.toLocaleString()} ms`;
     console.log(log);
     fs.appendFile("request_logs.txt", log + "\n", err => {
         if (err) {

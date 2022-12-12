@@ -19,6 +19,6 @@
   "homepage": "https://github.com/frank2ny/API_logger#readme",
   "dependencies": {
     "chalk": "^3.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
